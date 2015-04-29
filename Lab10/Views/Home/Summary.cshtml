@@ -1,0 +1,28 @@
+﻿
+
+@model IEnumerable<Lab10.Models.Order>
+
+<div class="panel-heading">Все заказы</div>
+<div class="panel-body">
+    <table class="table table-striped table-condensed">
+        <thead>
+            <tr><th>ID</th><th>Наименование</th><th>Количество</th><th>Адрес</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model)
+            {
+                <tr>
+                    <td>@item.OrderId</td>
+                    <td>@item.Name</td>
+                    <td>@item.Count</td>
+                    <td>@item.Address</td>
+                    <td>
+                        @Html.ActionLink("Удалить", "Remove",
+                                new { id = item.OrderId },
+                                new { @class = "btn btn-xs btn-primary" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

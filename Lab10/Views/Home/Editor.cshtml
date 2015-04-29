@@ -1,0 +1,24 @@
+﻿@model Lab10.Models.Order
+
+<div class="panel-heading">
+    Создать заказ
+</div>
+<div class="panel-body">
+    @using (Html.BeginForm("Add", "Home"))
+    {
+        <div class="form-group">
+            <label>Наименование</label>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Количество</label>
+            @Html.TextBoxFor(m => m.Count, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Адрес</label>
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-default">Сохранить</button>
+    }
+</div>
+
